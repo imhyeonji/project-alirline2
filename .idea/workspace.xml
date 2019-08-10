@@ -11,7 +11,6 @@
       <change beforePath="$PROJECT_DIR$/../4th/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../4th/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../4th/crawling.py" beforeDir="false" afterPath="$PROJECT_DIR$/../4th/crawling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../4th/crawling2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../4th/crawling2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ticket/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ticket/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../woobeenhomework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../woobeenhomework/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -56,7 +55,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="project-alirline2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-alirline2" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -120,9 +129,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1753" height="954" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24927199" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24927199" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -133,7 +141,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32806805" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32806805" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
