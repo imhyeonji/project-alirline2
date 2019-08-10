@@ -25,14 +25,19 @@
     let from = $("#from").val();
     let to = $("#to").val();
     let email = $("#email").val();
-    let country = $('#country option:selected').val();
+    let departure = $('#departure option:selected').val();
+    let destination = $('#destination option:selected').val();
+    let travellers = $('#travellers option:selected').val();
+
 
     console.log(lastName);
     console.log(firstName);
     console.log(from);
     console.log(to);
     console.log(email);
-    console.log(country);
+    console.log(departure);
+    console.log(destination);
+    console.log(travellers);
   }
 
 
@@ -46,7 +51,6 @@
           defaultDate: "+1w",
           changeMonth: true,
           numberOfMonths: 1,
-          dateFormat: "yy-mm-dd"
         })
         .on( "change", function() {
           to.datepicker( "option", "minDate", getDate( this ) );
@@ -55,7 +59,6 @@
         defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 1,
-        dateFormat: "yy-mm-dd"
       })
       .on( "change", function() {
         from.datepicker( "option", "maxDate", getDate( this ) );
@@ -108,7 +111,7 @@
 <!--<input type="text" id="to" name="to">-->
 
     <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">Billing address</h4>
+      <h4 class="mb-3">Traveller info</h4>
 
         <div class="row">
           <div class="col-md-6 mb-3">
@@ -150,26 +153,53 @@
         </div>
 
         <div class="row">
-          <div class="col-md-5 mb-3">
-            <label for="country">Country</label>
-            <select class="custom-select d-block w-100" id="country" required>
 
-              <option value="">Choose...</option>
-              <option value="USA">United States</option>
+          <div class="col-md-12">
+            <label for="departure">Departure</label>
+            <select class="custom-select d-block w-100" id="departure" required>
+
+              <option value="SEL">Seoul</option>
 
             </select>
             <div class="invalid-feedback">
               Please select a valid country.
             </div>
           </div>
-          <div class="col-md-4 mb-3">
-            <label for="state">State</label>
-            <select class="custom-select d-block w-100" id="state" required>
+
+          <div class="col-md-12">
+            <label for="destination">Destination</label>
+            <select class="custom-select d-block w-100" id="destination" required>
+
               <option value="">Choose...</option>
-              <option>California</option>
+              <option value="TYO">Tokyo</option>
+              <option value="PAR">Paris</option>
+              <option value="HKG">Hong Kong</option>
+
             </select>
             <div class="invalid-feedback">
-              Please provide a valid state.
+              Please select a valid country.
+            </div>
+
+          </div>
+
+          <div class="col-md-12">
+            <label for="travellers">Travellers</label>
+            <select class="custom-select d-block w-100" id="travellers" required>
+
+              <option value="">Choose...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+
+
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
             </div>
           </div>
 
