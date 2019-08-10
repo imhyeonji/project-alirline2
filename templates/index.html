@@ -17,6 +17,25 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+
+  function search(){
+    console.log("잘 나오냐")
+    let lastName = $("#firstName").val();
+    let firstName = $("#lastName").val();
+    let from = $("#from").val();
+    let to = $("#to").val();
+    let email = $("#email").val();
+    let country = $('#country option:selected').val();
+
+    console.log(lastName);
+    console.log(firstName);
+    console.log(from);
+    console.log(to);
+    console.log(email);
+    console.log(country);
+  }
+
+
   $( ".selector" ).datepicker({
   dateFormat: "yy-mm-dd"
 });
@@ -90,7 +109,7 @@
 
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Billing address</h4>
-      <form class="needs-validation" novalidate>
+
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">First name</label>
@@ -134,8 +153,10 @@
           <div class="col-md-5 mb-3">
             <label for="country">Country</label>
             <select class="custom-select d-block w-100" id="country" required>
+
               <option value="">Choose...</option>
-              <option>United States</option>
+              <option value="USA">United States</option>
+
             </select>
             <div class="invalid-feedback">
               Please select a valid country.
@@ -155,8 +176,8 @@
         </div>
         <hr class="mb-4">
 
-        <button class="btn btn-primary btn-lg btn-block" type="submit">항공권 검색</button>
-      </form>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="search()">항공권 검색</button>
+
     </div>
   </div>
 
