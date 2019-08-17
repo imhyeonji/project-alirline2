@@ -18,6 +18,18 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+$(document).ready(function(){
+  $("#from").on('input',function(){
+      let len = $(this).val()
+      console.log(len.length())
+
+   })
+
+   $("#to").on('textchange',function(){
+  console.log($(this).val())
+    $(this).val('')
+   })
+})
   console.log("ㅎㅇㅎㅇ");
  function search(){
     let firstName = $('#firstName').val();
@@ -28,6 +40,7 @@
     let departure = $('#departure').val();
     let destination = $('#destination option:selected').text();
     let passenger = $('#passenger option:selected').text();
+    let price = $('#price').val();
 
     console.log(lastName);
     console.log(firstName);
@@ -36,15 +49,25 @@
     console.log(email);
     console.log(departure);
     console.log(destination);
-
+    console.log(passenger);
+    console.log(price);
    $.ajax({
         type : "POST",
         url : "/save",
-        data : { firstName_give : firstName, lastName_give : lastName, from_give : from, to_give : to, email_give : email, departure_give : departure, destination_give : destination, passenger_give : passenger },
+        data : { firstName_give : firstName,
+                 lastName_give : lastName,
+                 from_give : from,
+                 to_give : to,
+                 email_give : email,
+                 departure_give : departure,
+                 destination_give : destination,
+                 passenger_give : passenger,
+                 price_give : price
+                },
         success : function(response){
             if(response['result'] == 'success') {
                 alert("조회 성공!");
-                window.location.reload(True);
+                location.reload(True);
             } else {
                 alert("오류");
             }
@@ -118,7 +141,7 @@
   <div class="py-5 text-center">
     <img class="d-block mx-auto mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
     <h2>Airfare</h2>
-    <p class="lead">선택한 항공권의 최저가를 이메일을 통해 실시간으로 알려드립니다!</p>
+    <p class="lead">검색한 항공권의 target price를 이메일을 통해 실시간으로 알려드립니다!</p>
   </div>
 
   <div class="row">
@@ -134,14 +157,14 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">First name</label>
-            <input type="text" class="form-control" id="firstName" placeholder="">
+            <input type="text" class="form-control" id="firstName" placeholder="" autocomplete="off">
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">Last name</label>
-            <input type="text" class="form-control" id="lastName" placeholder="">
+            <input type="text" class="form-control" id="lastName" placeholder="" autocomplete="off">
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -162,13 +185,7 @@
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="you@example.com">
-          <div class="invalid-feedback">
-            Please enter a valid email address for shipping updates.
-          </div>
-        </div>
+
 
         <div class="row">
           <div class="col-md-4 mb-3">
@@ -180,7 +197,7 @@
              </fieldset>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="state">도착지</label>
+            <label for="destination">도착지</label>
             <select class="custom-select d-block w-100" id="destination">
               <option value="">Choose...</option>
               <option value="TKO">TOKYO</option>
@@ -192,7 +209,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="state">승객</label>
+            <label for="passenger">승객</label>
             <select class="custom-select d-block w-100" id="passenger">
               <option value="">Choose...</option>
               <option value="1">1</option>
@@ -205,8 +222,22 @@
               Please provide a valid state.
             </div>
           </div>
-
+          <div class="col-md-6 mb-3">
+            <label for="price">target price</label>
+            <input type="text" class="form-control" id="price" placeholder="" autocomplete="off">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="" autocomplete="off">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
         </div>
+
         <hr class="mb-4">
 
         <button onclick="search()" class="btn btn-primary btn-lg btn-block" type="submit">항공권 검색</button>
