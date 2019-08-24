@@ -38,7 +38,7 @@ $(document).ready(function(){
     let to = $('#to').val();
     let email = $('#email').val();
     let departure = $('#departure').val();
-    let destination = $('#destination option:selected').text();
+    let destination = $('#destination option:selected').val();
     let passenger = $('#passenger option:selected').text();
     let price = $('#price').val();
 
@@ -82,7 +82,7 @@ $(document).ready(function(){
           defaultDate: "+1w",
           changeMonth: true,
           numberOfMonths: 1,
-          dateFormat: "yy-mm-dd"
+          dateFormat: "dd/mm/yy"
         })
         .on( "change", function() {
           to.datepicker( "option", "minDate", getDate( this ) );
@@ -91,7 +91,7 @@ $(document).ready(function(){
         defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 1,
-        dateFormat: "yy-mm-dd"
+        dateFormat: "dd/mm/yy"
       })
       .on( "change", function() {
         from.datepicker( "option", "maxDate", getDate( this ) );
@@ -224,9 +224,9 @@ $(document).ready(function(){
           </div>
           <div class="col-md-6 mb-3">
             <label for="price">target price</label>
-            <input type="text" class="form-control" id="price" placeholder="" autocomplete="off">
+            <input type="number" class="form-control" id="price" placeholder="" autocomplete="off">
             <div class="invalid-feedback">
-              Please enter a valid email address for shipping updates.
+              Please enter your target price for finding a flight ticket.
             </div>
           </div>
           <div class="col-md-6 mb-3">

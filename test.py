@@ -1,6 +1,4 @@
 from flask import Flask, render_template, jsonify, request
-import requests
-from bs4 import BeautifulSoup
 
 from pymongo import MongoClient
 client = MongoClient('localhost', 27017)
@@ -12,10 +10,6 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/list')
-def home_list():
-    return render_template('order_list.html')
-
 @app.route('/save', methods=['POST'])
 def saving():
     firstName_receive = request.form['firstName_give']
@@ -26,6 +20,7 @@ def saving():
     departure_receive = request.form['departure_give']
     destination_receive = request.form['destination_give']
     passenger_receive = request.form['passenger_give']
+    price_receive = request.form['price_give']
 
     ticket = {
 
@@ -36,17 +31,12 @@ def saving():
         'email' : email_receive,
         'departure' : departure_receive,
         'destination' : destination_receive,
-        'passenger' : passenger_receive
-
+        'passenger' : passenger_receive,
+        'price' : price_receive,
+        'is_emailed' : False
     }
     db.tickets.insert_one(ticket)
     return jsonify({'result' : 'success'})
-
-@app.route('/save', methods=['GET'])
-def get_view():
-
-    save = db.tickets.find({}, {'id': 0})
-    return jsonify({'result': 'success', 'tickets': list(save)})
 
 if __name__ == '__main__':
    app.run('0.0.0.0',port=5002,debug=True)
